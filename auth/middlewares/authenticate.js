@@ -8,7 +8,10 @@ const authenticate=(req,res,next)=>{
     {
         const decoded_token=jwt.verify(token,secret_key)
         if(decoded_token)
-        {
+        { 
+            // console.log(decoded_token);
+            const userID= decoded_token.userID
+            req.body.userID=userID
             next()
         }
         else{
