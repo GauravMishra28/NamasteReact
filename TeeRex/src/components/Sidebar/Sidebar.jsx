@@ -11,7 +11,6 @@ export const Sidebar = () => {
   } = useContext(AppContext);
   const[bool,setBool]=useState(true)
 
-
  const hanldeChange=(e)=>{
   (e.target.checked)?( dispatch({type:"Seach_query",payload:e.target.value})):(
     dispatch({type:"Seach_query",payload:""})
@@ -49,11 +48,17 @@ export const Sidebar = () => {
       <div className={styles.box}>
         <h3>Gender</h3>
         <div>
-          <input type="checkbox" />
+          <input 
+           value="Men" 
+           onChange={(e)=>hanldeChange(e)}
+          type="checkbox" />
           <label>Men</label>
         </div>
         <div>
-          <input type="checkbox" />
+          <input 
+           value="Women" 
+           onChange={(e)=>hanldeChange(e)}
+          type="checkbox" />
           <label>Women</label>
         </div>
       </div>
@@ -61,31 +66,49 @@ export const Sidebar = () => {
       <div className={styles.box}>
         <h3>Price</h3>
         <div>
-          <input type="checkbox" />
+          <input 
+           value="0250" 
+           onChange={(e)=>hanldeChange(e)}
+          type="checkbox" />
           <label>0-Rs250</label>
         </div>
         <div>
-          <input type="checkbox" />
-          <label>Rs250-Rs450</label>
+          <input 
+           value="2545" 
+           onChange={(e)=>hanldeChange(e)}
+          type="checkbox" />
+          <label>Rs251-Rs450</label>
         </div>
         <div>
-          <input type="checkbox" />
-          <label>Rs450</label>
+          <input 
+           value="450" 
+           onChange={(e)=>hanldeChange(e)}
+          type="checkbox" />
+          <label>Rs451-Rs500</label>
         </div>
       </div>
 
       <div className={styles.box}>
         <h3>Type</h3>
         <div>
-          <input type="checkbox" />
+          <input 
+           value="Polo" 
+           onChange={(e)=>hanldeChange(e)}
+          type="checkbox" />
           <label>Polo</label>
         </div>
         <div>
-          <input type="checkbox" />
+          <input 
+           value="Hoodie" 
+           onChange={(e)=>hanldeChange(e)}
+           type="checkbox" />
           <label>Hoodie</label>
         </div>
         <div>
-          <input type="checkbox" />
+          <input 
+           value="Basic" 
+           onChange={(e)=>hanldeChange(e)}
+          type="checkbox" />
           <label>Basic</label>
         </div>
       </div>

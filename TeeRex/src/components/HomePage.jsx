@@ -18,14 +18,29 @@ function HomePage() {
     let filterProducts = products;
     // console.log(filterProducts)
     if (query) {
-      filterProducts = filterProducts.filter(
-        (item) =>
-          item.name.toLowerCase().startsWith(query.toLowerCase()) 
-          ||
-          item.color.toLowerCase().startsWith(query.toLowerCase()) ||
-          item.type.toLowerCase().startsWith(query.toLowerCase())
-      );
+      if (query == "0250") {
+        filterProducts = filterProducts.filter(
+          (item)=>item.price<251
+          ) 
+      } else if (query == "2545") {
+        filterProducts = filterProducts.filter(
+          (item)=>item.price<451 && item.price>250
+          ) 
+      } else if (query == "450") {
+        filterProducts = filterProducts.filter(
+          (item)=>item.price>450
+          ) 
+      } else {
+        filterProducts = filterProducts.filter(
+          (item) =>
+            item.name.toLowerCase().startsWith(query.toLowerCase()) ||
+            item.color.toLowerCase().startsWith(query.toLowerCase()) ||
+            item.type.toLowerCase().startsWith(query.toLowerCase()) ||
+            item.gender.toLowerCase().startsWith(query.toLowerCase())
+        );
+      }
     }
+
     return filterProducts;
   };
   useEffect(() => {
